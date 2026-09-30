@@ -1,0 +1,5 @@
+# Self-service personal data copy
+
+`GET /v1/privacy/me/export` returns a JSON download for the signed-in person. It includes profile fields without credentials, their evidence, published evaluations and decision history, goals, revisions, check-ins, development actions and their events, activated improvement plans with their events, triaged governance cases with their events, context records with their reviews, and dated organization assignments and their events. Every export is recorded in the tenant audit chain. The route uses the current session's identity; callers cannot supply another employee ID.
+
+Unpublished reviews, draft improvement plans, untriaged governance reports, and individual anonymous feedback responses are excluded. Each category has a 10,000-row ceiling; the endpoint fails explicitly if a category exceeds it, so the user does not receive a silently truncated copy. Formal access, correction, deletion, retention, and legal-hold processes need jurisdiction-specific policy and an assisted workflow before production use. This endpoint does not claim to satisfy all data subject rights.

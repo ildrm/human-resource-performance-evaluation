@@ -1,0 +1,9 @@
+node_modules/
+.pnpm-store/
+.next/
+dist/
+coverage/
+.env
+*.tsbuildinfo
+validation/test-results/
+validation/login-visual.png

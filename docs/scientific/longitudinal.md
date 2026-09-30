@@ -1,0 +1,7 @@
+# Longitudinal scores
+
+The trend view is a descriptive read model of **published calculated scores**. It does not use a calibration-adjusted score, private draft, or feedback rating as a new data point. Each series is limited to one employee, exact role template version, and review purpose. Development and administrative cycles are never combined. The API returns a separate published final-score field for inspection, but the statistics use the calculated score.
+
+An analysis is available only with at least three observations, nonoverlapping review cycles, and cycle lengths within a 25% ratio of each other. The view reports the arithmetic mean, sample standard deviation (labelled volatility), ordinary least-squares slope per calendar year using cycle end dates, and first-to-last change. Numeric outputs use four decimal places. With fewer observations or incompatible cycles, the raw points and a reason appear, without a line or summary statistic.
+
+These are within-person descriptions of an organization-configured score. They are not a forecast, causal effect, validated benchmark, statistical process control limit, or employment recommendation. Three observations are a display rule, not a claim of reliable inference. A template version can preserve an identifier while underlying metric definitions, targets, evidence practices, or job duties change; users must check comparability before interpreting a pattern. No uncertainty interval or adjustment for opportunity, rater effects, or sample size is implemented.

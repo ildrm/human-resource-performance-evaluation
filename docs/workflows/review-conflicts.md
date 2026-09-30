@@ -1,0 +1,7 @@
+# Review conflict declarations and reassignment
+
+An eligible submission, calibration, or publication actor can record a conflict on an evaluation while that stage is active. A declaration names the stage, a category, and a reason. The reason is visible to authorized review staff in the review workspace. The declaration and later resolution are audited; their event history is append-only in PostgreSQL.
+
+An open declaration holds that stage and holds publication. A tenant or HR administrator other than the declarer, employee, or review submitter must resolve it with a reasoned note and an eligible replacement actor. The replacement must differ from the resolver, declarer, and employee, and cannot have declared a conflict at the same stage. The original declarer remains barred from that stage after resolution; only the latest approved replacement may act. A calibration conflict resolved after an earlier calibration requires the replacement to record a new calibration before publication. Submission, calibration, and publication retain their separate-actor checks.
+
+The evaluation row is locked during declarations, resolutions, and review actions so a conflict cannot race a stage transition. The workflow leaves the calculated result intact and does not decide whether a disclosed relationship is legally disqualifying. Organizations still need a conflict policy, designated decision makers, notice rules, recusal standards, and an independent appeal or escalation route for disputed conflict decisions. No automated notification is sent.

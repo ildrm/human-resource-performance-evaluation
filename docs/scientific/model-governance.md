@@ -1,0 +1,7 @@
+# Model evidence dossier and administrative gate
+
+An administrative evaluation cannot be published unless its active performance template has a `REVIEWED` model evidence dossier whose revalidation date has not passed. A second tenant administrator or HR administrator must review the dossier. Publication saves its ID on the evaluation, so a later retirement does not erase which record supported the original decision. Retiring the dossier prevents future administrative publications until a new version is reviewed. Development reviews do not require a dossier.
+
+The dossier records the intended interpretation and population, job-analysis and content references, reliability, criterion and construct evidence or reasons those are unavailable, a fairness review reference, limitations, and a revalidation date. The reviewer enters a substantive review note. The API enforces presence and actor separation; it cannot verify source quality, sample adequacy, legal permission, or whether a reviewer has suitable expertise. `REVIEWED` means a human completed the recorded governance step, **not** that the model is empirically validated or lawful for an employment decision.
+
+For a real deployment, the organization must provide role-specific task analyses, representative and appropriately governed study data, an intended use, reviewer authority, and jurisdictional decisions. Independent scientific and legal review must determine whether the evidence is sufficient. The current synthetic test references are deliberately not such evidence.

@@ -1,0 +1,28 @@
+{
+  "name": "human-performance-intelligence",
+  "private": true,
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "lint": "eslint apps packages validation playwright.config.ts --ext .ts,.tsx",
+    "format": "prettier --write \"apps/**/*.{ts,tsx,json,css}\" \"packages/**/*.{ts,tsx,json}\" \"validation/**/*.{mjs,ts}\" package.json eslint.config.mjs playwright.config.ts",
+    "format:check": "prettier --check \"apps/**/*.{ts,tsx,json,css}\" \"packages/**/*.{ts,tsx,json}\" \"validation/**/*.{mjs,ts}\" package.json eslint.config.mjs playwright.config.ts",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "dev": "pnpm --parallel --filter @hpi/api --filter @hpi/web dev",
+    "db:migrate": "pnpm --filter @hpi/api db:migrate",
+    "db:seed": "pnpm --filter @hpi/api db:seed",
+    "smoke": "node validation/smoke.mjs",
+    "smoke:local": "node validation/live-smoke.mjs",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.0",
+    "eslint": "10.11.0",
+    "prettier": "3.9.9",
+    "typescript-eslint": "8.70.1"
+  }
+}

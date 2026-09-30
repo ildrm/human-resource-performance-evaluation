@@ -1,0 +1,7 @@
+# Binary proportion uncertainty
+
+A metric can be explicitly declared a **binary proportion** with `%` as its unit. An observed item then requires an integer success count and a positive integer trial count, with successes no greater than trials. The submitted percent must agree with `100 × successes / trials` within 0.005 percentage points. The server rejects missing, impossible, fractional, and inconsistent counts. Both counts are retained with the evidence and frozen calculation input.
+
+The score trace reports the observed percentage and a two-sided 95% Wilson score interval. This avoids displaying 100% from 3 trials with the same evidentiary strength as 100% from 3,000 trials. The interval describes the observed binary proportion under independent trials with a stable probability and sampling process. It is **not** a confidence interval for the employee's policy score, a validated employment threshold, or a correction for selection, clustering, measurement error, or changing work mix. Small-sample minimum rules remain a separate organization-configured gate.
+
+The interval has no effect on the authoritative calculated or calibrated score. Other continuous and rate metrics retain numerator/denominator fields where submitted but receive no Wilson interval. A scientifically suitable interval for those measures requires a specified outcome distribution and sampling design; the software does not guess one.

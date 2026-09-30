@@ -1,0 +1,10 @@
+packages:
+  - apps/*
+  - packages/*
+allowBuilds:
+  esbuild: true
+  '@scarf/scarf': false
+overrides:
+  '@nestjs/swagger>path-to-regexp': 8.4.0
+  '@nestjs/swagger>lodash': 4.18.1
+  '@nestjs/swagger>js-yaml': 4.3.2

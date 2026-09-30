@@ -1,0 +1,41 @@
+{
+  "name": "@hpi/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.scripts.json",
+    "test": "vitest run --passWithNoTests --maxWorkers=1",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "db:seed": "tsx scripts/seed.ts",
+    "verify:restore": "tsx scripts/verify-restore.ts",
+    "worker": "tsx src/outbox-worker.ts",
+    "start": "node dist/main.js"
+  },
+  "dependencies": {
+    "@hpi/contracts": "workspace:*",
+    "@hpi/calculation-engine": "workspace:*",
+    "@nestjs/common": "11.2.6",
+    "@nestjs/core": "11.2.6",
+    "@nestjs/platform-express": "11.2.6",
+    "@nestjs/swagger": "11.2.6",
+    "decimal.js": "10.6.0",
+    "express": "5.2.1",
+    "helmet": "8.3.0",
+    "pg": "8.16.3",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
+    "@types/express": "5.0.3",
+    "@types/node": "24.8.1",
+    "@types/pg": "8.15.5",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "vitest": "5.0.2"
+  }
+}
